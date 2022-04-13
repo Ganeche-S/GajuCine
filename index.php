@@ -15,6 +15,7 @@ $patron = new VueIndex();
                 $module=htmlspecialchars($_GET['module']);
             }
             switch($module){
+                case "Utilisateur":
                 case "Connexion":
                     include 'module/module_'.$module.'/Mod'.$module.'.php';
                     break;

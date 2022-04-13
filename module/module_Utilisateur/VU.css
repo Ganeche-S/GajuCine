@@ -1,0 +1,72 @@
+main {
+    padding: 20px;
+    background-color: cadetblue;
+    height: 33%;
+}
+
+.Div {
+    width: 33%;
+    background-color: lightblue;
+    border-radius: 40px;
+    padding: 3%;
+    text-align: center;
+    margin-left: 33%;
+}
+
+#Photo {
+    width: 150px;
+    height: 125px;
+}
+
+
+.divModif {
+    width: 300px;
+    height: 50px;
+}
+
+.divModif {
+    color: red;
+    font-size: 1.3em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.divModif a:hover {
+    color: #FECC00;
+}
+
+
+.Formulaire {
+    width: 33%;
+    height: 33%;
+    background-color: lightblue;
+    border-radius: 40px;
+    padding: 3%;
+    text-align: center;
+    position : relative;
+    top : 50px;
+    margin-left: 33%;
+}
+
+.Formulaire form {
+    color: black;
+    font-size: 1.2em;
+}
+
+.Formulaire input {
+    width: 100%;
+    margin: 5px;
+}
+
+.FormulaireImage input {
+    margin-top: 5px;
+    width: 250px;
+}
+
+input.button-center {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    display: block;
+}

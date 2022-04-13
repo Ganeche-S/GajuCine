@@ -40,6 +40,14 @@ class VueConnexion extends VueIndex{
                 <input type="password" name="mdp" placeholder="Mot de passe" required></br>
                 <label>Confirmer votre mot de passe : </label></br>
                 <input type="password" name="mdp2" placeholder="Mot de passe" required></br>
+                <label>Entrer votre sexe : </label></br>
+                <input type="radio" name="sexe" value="H" checked>Homme<input type="radio" name="sexe" value="F">Femme</br>
+                <label>Entrer votre date de naissance : </label></br>
+                <input type="date" name="dateNaissance" required></br>
+                <label>Entrer votre email : </label></br>
+                <input type="text" name="email" placeholder="Email" required></br>
+                <label>Entrer votre telephone : </label></br>
+                <input type="tel" name="telephone" minlength="10" maxlength="10" placeholder="Numéro de Téléphone" required></br>
                 <input class="button-center" type="submit" name="submit" value="Inscription">
             </form>
             </center>';

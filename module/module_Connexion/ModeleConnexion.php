@@ -5,6 +5,7 @@ if (!defined('CONST_INCLUDE')){
 require_once('./ConnexionBD.php');
 
 class ModeleConnexion extends ConnexionBD {
+
     public function __construct(){
         parent::initConnexion();
     }
@@ -28,7 +29,7 @@ class ModeleConnexion extends ConnexionBD {
                 $_SESSION['idUtilisateur'] = $response['idUtilisateur'];
                 $_SESSION['nom'] = $response['nom'];
                 $_SESSION['prenom'] = $response['prenom'];
-                header('Location:index.php');
+                header('Location:index.php?module=Utilisateur&action=afficheProfil');
             } else {
                 ?>
                 <script type="text/javascript">
@@ -51,6 +52,12 @@ class ModeleConnexion extends ConnexionBD {
 
         $nom = $_POST['nom'];
         $prenom = $_POST['prenom'];
+
+        $sexe = $_POST['sexe'];
+        $dateNaissance = $_POST['dateNaissance'];
+        $email = $_POST['email'];
+        $telephone = $_POST['telephone'];
+
         $bd = self::$bdd->prepare('SELECT nom, prenom FROM Utilisateur where nom like ? AND prenom like ?');
         $bd->execute(array($nom, $prenom));
         $response = $bd->fetch();
@@ -61,7 +68,6 @@ class ModeleConnexion extends ConnexionBD {
             </script>
             <?php
         }
-
         else if($_POST['mdp2']!=$_POST['mdp']) {
         ?>
             <script type="text/javascript">
@@ -70,10 +76,9 @@ class ModeleConnexion extends ConnexionBD {
         <?php
 
         }
-
         else{
-            $bd = self::$bdd->prepare('INSERT into Utilisateur values(default,?,?,?)');
-            $bd->execute(array($nom, $prenom ,$mdp));
+            $bd = self::$bdd->prepare('INSERT into Utilisateur values(default,?,?,?,?,?,?,?)');
+            $bd->execute(array($nom, $prenom , $mdp, $sexe, $dateNaissance, $email, $telephone));
         }
     }
 
