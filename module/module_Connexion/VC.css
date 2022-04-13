@@ -1,0 +1,26 @@
+main {
+    background-color: cadetblue;
+    min-height: 600px;
+}
+.formulaire {
+    width: 33%;
+    height: 33%;
+    background-color: lightblue;
+    border-radius: 40px;
+    padding: 3%;
+    text-align: center;
+    position : relative;
+    top : 50px;
+}
+
+.formulaire input {
+    width: 100%;
+}
+
+input.button-center {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    display: block;
+}
