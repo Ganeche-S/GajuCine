@@ -14,26 +14,25 @@ class ModeleConnexion extends ConnexionBD {
  
     $mdp = $_POST['mdp'];
 
-        if (!isset($_POST['nom']) || !isset($_POST['prenom']) || !isset($_POST['mdp'])) {
+        if (!isset($_POST['email']) || !isset($_POST['mdp'])) {
         ?>
             <script type="text/javascript"> 
-                alert("nom, prénom ou mot de passe non renseigner");
+                alert("email ou mot de passe non renseigner");
             </script>
         <?php
         }
         else{
-            $bd = self::$bdd->prepare('SELECT * FROM Utilisateur where nom like ? and prenom like ? and mdp like ?');
-            $bd->execute(array($_POST['nom'], $_POST['prenom'], $mdp));
+            $bd = self::$bdd->prepare('SELECT * FROM Utilisateur where email like ? and mdp like ?');
+            $bd->execute(array($_POST['email'], $mdp));
             $response = $bd->fetch();
             if ($response) {
                 $_SESSION['idUtilisateur'] = $response['idUtilisateur'];
-                $_SESSION['nom'] = $response['nom'];
-                $_SESSION['prenom'] = $response['prenom'];
+                $_SESSION['email'] = $response['email'];
                 header('Location:index.php?module=Utilisateur&action=afficheProfil');
             } else {
                 ?>
                 <script type="text/javascript">
-                    alert("nom, prénom ou mot de passe incorrect");
+                    alert("email ou mot de passe incorrect");
                 </script>
                 <?php
             }

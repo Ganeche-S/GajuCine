@@ -9,8 +9,8 @@ class VueUtilisateur extends VueIndex{
 
     public function affichageDuProfilUtilisateur($id) {
         echo "<div class =\"Div\">";
-        echo "<h1>" . $_SESSION['nom'] . " " . $_SESSION['prenom'] . " </h1>";
         foreach ($id as $key) {
+            echo "<h1>" . $key['nom'] . " " . $key['prenom'] . " </h1>";
             echo "<h3>Sexe</h3> " . $key['sexe'];
             echo "<hr>";
             echo "<h3>Date de naissance</h3> " . $key['dateNaissance'];

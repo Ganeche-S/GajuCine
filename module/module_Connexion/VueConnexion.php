@@ -15,10 +15,8 @@ class VueConnexion extends VueIndex{
         <form action="index.php?action=connexion&module=Connexion" method="post">
             <div class="formulaire">
                 <h1>Connexion</h1>
-                <label>Entrer votre nom : </label></br>
-                <input type="text" name="nom"  placeholder="Nom" required></br>
-                <label>Entrer votre prenom : </label></br>
-                <input type="text" name="prenom"  placeholder="Prenom" required></br>
+                <label>Entrer votre email de connexion : </label></br>
+                <input type="text" name="email"  placeholder="Email" required></br>
                 <label>Entrer votre mot de passe : </label></br>
                 <input type="password" name="mdp" placeholder="Mot de passe" required></br>
             <input class="button-center" type="submit" value="Connexion">
