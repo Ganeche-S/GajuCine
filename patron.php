@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <!-- en-tête de la page -->
-    <title>MapAnime</title>
+    <title>GajuCine</title>
     <head>
 
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/jpg" href="./images/logo.jpg"/>
-        <link href="sloga.css" rel="stylesheet" type="text/css">
+        <link href="style.css" rel="stylesheet" type="text/css">
     </head>
     
     <!-- corps de la page -->
@@ -17,9 +17,14 @@
         </header>
             <nav>
                 <div class="gauche">
-                    <a href="index.php?module=Recherche&action=films">Films</a>
+                    <a href="index.php?module=Film&action=films">Films</a>
+                    <?php
+                        if (isset($_SESSION['idUtilisateur'])) {
+                            echo "<a href=\"index.php?module=Film&action=recherche\">Search Film</a>";
+                        }
+                    ?>
                 </div>
-                
+
                 <div class="droite">
                     <?php
                         if (isset($_SESSION['idUtilisateur'])) {

@@ -8,15 +8,16 @@ if (!defined('CONST_INCLUDE')){
 $patron = new VueIndex();
 
             if (!isset($_GET['module'])) {
-                $module="Connexion";
-                $_GET['action'] = "formInscription";
+                $module="Film";
+                $_GET['action'] = "topFilm";
             }
             else {
                 $module=htmlspecialchars($_GET['module']);
             }
             switch($module){
-                case "Utilisateur":
                 case "Connexion":
+                case "Utilisateur":
+                case "Film":
                     include 'module/module_'.$module.'/Mod'.$module.'.php';
                     break;
                 default :
