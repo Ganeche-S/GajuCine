@@ -57,13 +57,13 @@ class ModeleConnexion extends ConnexionBD {
         $email = $_POST['email'];
         $telephone = $_POST['telephone'];
 
-        $bd = self::$bdd->prepare('SELECT nom, prenom FROM utilisateur where nom like ? AND prenom like ?');
-        $bd->execute(array($nom, $prenom));
+        $bd = self::$bdd->prepare('SELECT email FROM utilisateur where email like ?');
+        $bd->execute(array($email));
         $response = $bd->fetch();
         if ($response) {
             ?>
             <script type="text/javascript">
-                alert("Le nom et prénom existe déja !");
+                alert("L'email existe deja!");
             </script>
             <?php
         }
@@ -78,6 +78,11 @@ class ModeleConnexion extends ConnexionBD {
         else{
             $bd = self::$bdd->prepare('INSERT into utilisateur values(default,?,?,?,?,?,?,?)');
             $bd->execute(array($nom, $prenom , $mdp, $sexe, $dateNaissance, $email, $telephone));
+            ?>
+            <script type="text/javascript">
+                alert("Inscription reussi !");
+            </script>
+            <?php
         }
     }
 

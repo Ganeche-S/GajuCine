@@ -33,7 +33,18 @@ class ModeleUtilisateur extends ConnexionBD{
         $email = $_POST['email'];
         $telephone = $_POST['telephone'];
 
-        if (!empty($_POST['email']) && !empty($_POST['telephone'])) {
+        $bd = self::$bdd->prepare('SELECT email FROM utilisateur where email like ?');
+        $bd->execute(array($email));
+        $response = $bd->fetch();
+        if ($response) {
+            ?>
+            <script type="text/javascript">
+                alert("L'email existe deja!");
+            </script>
+            <?php
+            return;
+        }
+        else if(!empty($_POST['email']) && !empty($_POST['telephone'])) {
             $req = self::$bdd->prepare("UPDATE utilisateur SET email=?, telephone=? WHERE idUtilisateur = ?");
             $req->execute(array($email, $telephone, $idUtilisateur));
         } else if (!empty($_POST['email'])) {
