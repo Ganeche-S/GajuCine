@@ -1,0 +1,66 @@
+main {
+    padding: 20px;
+    background: cadetblue;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+    height: 33%;
+}
+
+.cat {
+    width : 33%;
+    height : 33%;
+}
+td {
+    width : 0%;
+}
+.block{
+    background-color: lightgray;
+    padding:20px 20px 20px 20px;
+    text-align: center;
+}
+
+
+.blockTopFilmT{
+    background-color: lightgray;
+    padding:20px 20px 20px 20px;
+    width : 45%;
+    float : right;
+}
+
+.blockTopFilmT p {
+    color : white;
+    font-size: 2em;
+    position: relative;
+    top : 25px;
+}
+
+
+.blockTopFilmP{
+    background-color: lightgray;
+    padding:20px 20px 20px 20px;
+    width : 45%;
+}
+
+.blockTopFilmP p {
+    color : white;
+    font-size: 2em;
+    position: relative;
+    top : 25px;
+}
+
+.formulaire {
+    width: 33%;
+    height: 33%;
+    background-color: lightgray;
+    border-radius: 40px;
+    padding: 3%;
+    text-align: center;
+    margin: auto;
+}
+.formulaire form {
+    color : black;
+    font-size: 1.2em;
+}
+
+.formulaire input {
+    margin: 5px;
+}

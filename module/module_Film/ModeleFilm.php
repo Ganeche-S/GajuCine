@@ -25,7 +25,6 @@ class ModeleFilm {
             FILTER ( LANG ( ?abstract ) = 'fr' ).
             FILTER ( LANG ( ?name ) = 'fr' ).
           }
-          LIMIT 100
              ";
         $result = sparql_query( $sparql );
         if( !$result ) { print sparql_errno() . ": " . sparql_error(). "\n"; exit; }
@@ -48,7 +47,6 @@ class ModeleFilm {
             FILTER ( LANG ( ?name ) = 'fr' ).
             FILTER CONTAINS(?name,'".$result."')
           }
-          LIMIT 100
              ";
         $result = sparql_query( $sparql );
         if( !$result ) { print sparql_errno() . ": " . sparql_error(). "\n"; exit; }

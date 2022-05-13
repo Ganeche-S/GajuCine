@@ -22,7 +22,7 @@ class ModeleConnexion extends ConnexionBD {
         <?php
         }
         else{
-            $bd = self::$bdd->prepare('SELECT * FROM Utilisateur where email like ? and mdp like ?');
+            $bd = self::$bdd->prepare('SELECT * FROM utilisateur where email like ? and mdp like ?');
             $bd->execute(array($_POST['email'], $mdp));
             $response = $bd->fetch();
             if ($response) {
@@ -57,7 +57,7 @@ class ModeleConnexion extends ConnexionBD {
         $email = $_POST['email'];
         $telephone = $_POST['telephone'];
 
-        $bd = self::$bdd->prepare('SELECT nom, prenom FROM Utilisateur where nom like ? AND prenom like ?');
+        $bd = self::$bdd->prepare('SELECT nom, prenom FROM utilisateur where nom like ? AND prenom like ?');
         $bd->execute(array($nom, $prenom));
         $response = $bd->fetch();
         if ($response) {
@@ -76,7 +76,7 @@ class ModeleConnexion extends ConnexionBD {
 
         }
         else{
-            $bd = self::$bdd->prepare('INSERT into Utilisateur values(default,?,?,?,?,?,?,?)');
+            $bd = self::$bdd->prepare('INSERT into utilisateur values(default,?,?,?,?,?,?,?)');
             $bd->execute(array($nom, $prenom , $mdp, $sexe, $dateNaissance, $email, $telephone));
         }
     }

@@ -34,13 +34,13 @@ class ModeleUtilisateur extends ConnexionBD{
         $telephone = $_POST['telephone'];
 
         if (!empty($_POST['email']) && !empty($_POST['telephone'])) {
-            $req = self::$bdd->prepare("UPDATE Utilisateur SET email=?, telephone=? WHERE idUtilisateur = ?");
+            $req = self::$bdd->prepare("UPDATE utilisateur SET email=?, telephone=? WHERE idUtilisateur = ?");
             $req->execute(array($email, $telephone, $idUtilisateur));
         } else if (!empty($_POST['email'])) {
-            $req = self::$bdd->prepare("UPDATE Utilisateur SET email=? WHERE idUtilisateur = ?");
+            $req = self::$bdd->prepare("UPDATE utilisateur SET email=? WHERE idUtilisateur = ?");
             $req->execute(array($email, $idUtilisateur));
         } else if (!empty($_POST['telephone'])) {
-            $req = self::$bdd->prepare("UPDATE Utilisateur SET telephone=? WHERE idUtilisateur = ?");
+            $req = self::$bdd->prepare("UPDATE utilisateur SET telephone=? WHERE idUtilisateur = ?");
             $req->execute(array($telephone, $idUtilisateur));
         }
     }
